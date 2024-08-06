@@ -93,14 +93,3 @@ for i = 1:size(keytable,1)
         end
     end
 end
-%% Calculation of division times for first and second generations (Col 8+9)
-for i = 1:size(keytable,1)
-    if (rem(keytable(i,1),8) == 1 || rem(keytable(i,1),8) == 2) && keytable(i,6) ~= 0 
-        keytable(i,8) = (keytable(i,6)-keytable(i,5))*TimeIntv;
-    end
-end
-for i = 1:size(keytable,1)
-    if rem(keytable(i,1),8) <= 4 && rem(keytable(i,1),8) ~= 0 && keytable(i,7) ~= 0 
-        keytable(i,9) = (keytable(i,7)-keytable(i,6))*TimeIntv;
-    end
-end
